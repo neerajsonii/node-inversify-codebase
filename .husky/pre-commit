@@ -1,11 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '## Running code fix...'
-npm run lint-staged
-echo '## code fix done'
-echo ' ------------- '
-
 echo '## Running lint check...'
 npm run lint
 echo '## Lin check done'

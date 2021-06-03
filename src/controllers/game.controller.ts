@@ -7,7 +7,6 @@ import { IGame } from '../infrastructure/interfaces/game.interface';
 import { GameService } from '../infrastructure/services/game.service';
 import TYPES from '../types';
 
-@injectable()
 export class GameController extends ResponseUtil {
     constructor(
         @inject(TYPES.GameService) private gameService: GameService
@@ -17,7 +16,7 @@ export class GameController extends ResponseUtil {
 
     public async listGames(req: Request, res: Response) {
         const games: IGame[] = await this.gameService.listGames({});
-        return this.sendRes(games, res, "Game List");
+        return this.sendRes(games, res, 'Game List');
     }
     
     public async createGame(req: Request, res: Response) {
